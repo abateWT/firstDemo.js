@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> functionQues#7 </title>
+</head>
+<script>
+function doFutureValue(){
+  var p = parseFloat(document.getElementById('pri').value);
+  var r = parseFloat(document.getElementById('annualRate').value);
+  var n = parseFloat(document.getElementById('numYears').value);
+  var result = computeFutureValue(p,r,n);
+  document.getElementById('answer').innerHTML = ("Based on Entered Data, Your Future Value is: " + FV);
+}
+var FV;
+function computeFutureValue(p,r,n){
+  FV = p*((1+r)**n);
+  return FV;
+  }
+</script>
+<body>
+<h2><strong> Investment Calculator </strong></h2><br>
+Amount Invested (Principal) <input type="text" id="pri"><br>
+Annula Rate (example: .08) <input type="text" id="annualRate"><br>
+Number of Years <input type="text" id="numYears"><br>
+Periods per Year <input type="text" id="perPerYear"><br>
+<button type="button" onclick="doFutureValue()"> Compute Future Value </button><br>
+<button type="button"> Reset </button><br>
+<div id="answer"></div>
+</body>
+</html>
+

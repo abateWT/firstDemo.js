@@ -1,0 +1,31 @@
+
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Que#isEven</title>
+</head>
+<script>
+    function myfunction(){
+     var input = parseInt(document.getElementById('inputNumber').value);
+     var result = isEven(input);
+     document.getElementById('answer').innerHTML = message;
+    }
+     var message;
+    function isEven(value){
+       if(value % 2 == 0){
+       message = ("Your number is an Even Number!");
+       } else
+       message = ("Your Number is an Odd Number!");
+       }
+</script>
+<body>
+    <h3> Checking Even or Odd </h3>
+    Enter Any Number <input id="inputNumber" type="text"><br><br>
+    <button type="button" onclick="myfunction()"> Your Entered Number is: </button><br><br>
+    <div id="answer"></div>
+</body>
+</html>
+</body>
+</html>

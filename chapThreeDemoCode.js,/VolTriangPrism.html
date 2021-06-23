@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> functionQues#4 </title>
+</head>
+<script>
+function doInputOutput(){
+var a = parseInt(document.getElementById('sideA').value);
+var b = parseInt(document.getElementById('sideB').value);
+var c = parseInt(document.getElementById('sideC').value);
+var length = parseInt(document.getElementById('len').value);
+var result1 = prismVolume(a,b,c,length);
+    document.getElementById('answer').innerHTML = ("The Volume of the Triangular Prism is: " + Volume + " unit^3");
+}
+var Volume;
+function prismVolume(a,b,c,length){
+    var result2 = triangleArea(a,b,c);
+    Volume = (trigArea * length);
+        return Volume;
+}
+var trigArea;
+function triangleArea(a,b,c){
+ var s = (a+b+c)/2;
+ trigArea = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+     return trigArea;
+}
+</script>
+<body>
+<h3> Finding the Volume of Triangular Prism </h3><br>
+Face of Triangle Side A: <input type="text" id="sideA"><br>
+Face of Triangle Side B: <input type="text" id="sideB"><br>
+Face of Triangle Side C: <input type="text"id="sideC"><br>
+Length of the Prism: <input type="text" id="len"><br>
+<button type="button" onclick="doInputOutput()"> Volume of the Prism </button><br>
+<div id="answer"></div>
+</body>
+</html>
+

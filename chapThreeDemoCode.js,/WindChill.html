@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> functionQ#3 </title>
+</head>
+<script>
+function doInputOutput(){
+    var t = parseFloat(document.getElementById('temperature').value);
+    var s = parseFloat(document.getElementById('windSpeed').value);
+     var result = windChill(t,s);
+     document.getElementById('answer').innerHTML = ("The Wind Chill factor is computed as follows: " + WindChillfactor + " Fahrenheit")
+}
+var WindChillfactor;
+function windChill(t,s){
+  WindChillfactor = 35.74 + 0.6215*t + 35.75*(s**0.16) + 0.4275*t*(s**0.16);
+}
+</script>
+<body>
+<h3> Using Temp & Wind Speed to Determine Wind Chill factor </h3>
+Enter temperature in Fahrenheit <input type="text" id="temperature"> <br>
+Enter wind speed miles per hour at five feet above the ground <input type="text" id="windSpeed"><br>
+<button type="button" onclick="doInputOutput()"> Wind Chill </button><br>
+<div id="answer"></div>
+</body>
+</html>

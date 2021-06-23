@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> functioQues#8</title>
+</head>
+<script>
+function doPayment(){
+var a = parseFloat(document.getElementById('loanAmt').value);
+var r = parseFloat(document.getElementById('intRate').value);
+var n = parseFloat(document.getElementById('numOfPeriod').value);
+
+var result1 = computePayment(a,r,n);
+var result2 = computeBalance(a,r,n,payment);
+document.getElementById('answer1').innerHTML = ("Your Payment is: " + payment);
+}
+function doBalance(){
+var a = parseFloat(document.getElementById('loanAmt').value);
+var r = parseFloat(document.getElementById('intRate').value);
+var n = parseFloat(document.getElementById('numOfPeriod').value);
+
+var result3 = computePayment(a,r,n);
+var result4 = computeBalance(a,r,n,payment);
+document.getElementById('answer2').innerHTML = ("Your Balance is: " + balance);
+}
+var payment;
+function computePayment(a,r,n){
+ payment = (a*r)/(1 - (1+r)**(-n));
+    return payment;
+}
+var balance;
+function computeBalance(a,r,n,payment){
+    var result5 = computePayment(a,r,n);
+balance = a*((1+r)**n) - payment*(((1+r)**n -1))/r;
+    return balance;
+}
+
+</script>
+<body>
+<h3><strong> Loan Calculator </strong></h3>
+Amount borrowed (Principal) <input type="text" id="loanAmt"><br>
+Amount Interest rate (example: 0.65) <input type="text" id="intRate"><br>
+Number of Years <input type="text" id="numOfPeriod"><br>
+Payement Per Year <input type="text" id="PPY"><br>
+Amount borrowed (Principal) <input type="text" id="pri"><br><br>
+<button type="button" onclick="doPayment()"> Compute Payment </button><br>
+Number of Payments Paid to Date <input type="text" id="NPPD"><br><br>
+<button type="button" onclick="doBalance()"> Compute Payoff Ampunt </button>
+<div id="answer1"></div>
+<div id="answer2"></div>
+</body>
+</html>
+

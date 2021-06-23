@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Area of any Triangle </title>
+</head>
+<script>
+function myfunction(){
+  var a = parseInt(document.getElementById('side1').value);
+  var b = parseInt(document.getElementById('side2').value);
+  var c = parseInt(document.getElementById('side3').value);
+  var s = (a+b+c)/2;
+  var area = Math.sqrt(s*(s-a)*(s-b)*(s-c));
+  document.getElementById('answer').innerHTML = ("The Area of the Triangle is: " + area + " unit^3");
+}
+</script>
+<body>
+<h3> Area of Any Traingle </h3><br>
+<button type="textinforamtion"> Enter the following Values </button><br>
+Enter Side One <input id="side1" type="text"><br>
+Enter Side Two <input id="side2" type="text"><br>
+Enter Side Three <input id="side3" type="text"><br>
+<button type="button" onclick="myfunction()"> Area of the Triangle is: </button><br>
+<div id="answer"></div>
+</body>
+</html>

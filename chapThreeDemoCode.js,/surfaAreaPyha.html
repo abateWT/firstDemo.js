@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> surfaceAreaofPyramid </title>
+</head>
+<script>
+function myfunction(){
+  var h = parseInt(document.getElementById('height').value);
+  var b = parseInt(document.getElementById('base').value);
+  var e = Math.sqrt((b**2)/2 * (h**2));
+  var s = ((2*e) + b)/2;
+  var TAPyramid = (b**2) + 4*(Math.sqrt(s*(s-b)*(s-e)*(s-e)));
+  document.getElementById('answer').innerHTML = ("Total Surface Area of the Pyramid is: " + TAPyramid + " unit^2");
+}
+</script>
+<body>
+<h3> Surface Area of the Pyramid </h3>
+<button> Based on Your Data Enter the following Values of the Pyramid </button><br><br>
+Input the Height: <input type="text" id="height"><br><br>
+Input the Base: <input type="text" id="base"><br><br>
+<button type="button" onclick="myfunction()"> Total Surface Area of You Pyramid is: </button><br>
+<div id="answer"></div>
+</body>
+</html>

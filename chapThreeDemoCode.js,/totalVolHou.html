@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> functionQues#6 </title>
+</head>
+<script>
+
+  function doInputOutput(){
+    var w = parseInt(document.getElementById('wid').value);
+    var d = parseInt(document.getElementById('dep').value);
+    var h = parseInt(document.getElementById('heig').value);
+    var sweep = parseInt(document.getElementById('swp').value);
+    var result1 = houseVolume(w,d,h,sweep);
+    document.getElementById('answer').innerHTML = ( "The total Volume of the House is: " + TotalVolume + " unit^3");
+    }
+  var TotalVolume;
+  function houseVolume(w,d,h,sweep){
+    var result2 = livingVolume(w,d,h);
+    var result3 = roofVolume(w,d,sweep);
+    TotalVolume = livVolume + roofVol;
+    return TotalVolume;
+  }
+  var livVolume;
+  function livingVolume(w,d,h){
+  var result4 = roofVolume(w,d,sweep);
+  livVolume = w*d*h;
+  return livVolume;
+  }
+  var roofVol;
+  function roofVolume(w,d,sweep){
+  var result5 = triangleArea(a,b,c);
+  roofVol = triArea * w;
+  return roofVol;
+  }
+  var triArea;
+  function triangleArea(a,b,c){
+      var s = (a + b + c) / 2;
+    triArea = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+    return triArea;
+  }
+
+</script>
+<body>
+<h2> Total Volume of the House </h2>
+Enter Width of the House: <input type="text" id="wid"><br>
+Enter Depth of the House: <input type="text" id="dep"><br>
+Enter Height of the House: <input type="text" id="heig"><br>
+Enter Sweep of the House: <input type="text" id="swp"><br>
+<button type="button" onclick="doInputOutput()"> Total Volume of the House </button>
+<div id="answer"></div>
+</body>
+</html>
+
